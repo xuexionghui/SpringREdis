@@ -1,2 +1,15 @@
-springboot中整合redis，存储的两种序列化方式
-使用redis作为缓存
+启动主类： RedisApplication 
+A、springboot中整合redis，存储的两种序列化方式
+   Json存储：RedisUtils、JsonController
+   Java二进制存储：SerializableController
+   UserEntity
+B、使用redis作为缓存
+   MemberController、UserMapper、MemberEntity
+   
+C、采用redis的过期机制通知，限定订单的时间
+   RedisKeyExpirationListener、RedisListenerConfig、
+   OrderController、OrderMapper、OrderEntity
+     使用Redis Key自动过期机制
+     当我们的key失效时，可以执行我们的客户端回调监听的方法。
+     需要在Redis中配置：
+   notify-keyspace-events "Ex"
