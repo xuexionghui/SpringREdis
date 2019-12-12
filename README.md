@@ -1,0 +1,2 @@
+springboot中整合redis，存储的两种序列化方式
+使用redis作为缓存
